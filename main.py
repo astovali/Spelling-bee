@@ -32,7 +32,11 @@ print(f"Letters: {Fore.RED+letters[0]+Style.RESET_ALL}, {', '.join(letters[1:])}
 print(f"Max possible score: {max_score}")
 
 while score < max_score:
-    guess = input('')
+    try: 
+        guess = input('')
+    except KeyboardInterrupt:
+        print("Bro really thought")
+        continue
     if guess == '':
         break
     if len(guess) < 4:
